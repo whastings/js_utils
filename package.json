@@ -1,0 +1,27 @@
+{
+  "name": "js_utils",
+  "version": "0.0.1",
+  "description": "Various utilities for working in JavaScript.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "babel-node tests | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/whastings/js_utils.git"
+  },
+  "author": "Will Hastings",
+  "license": " ",
+  "bugs": {
+    "url": "https://github.com/whastings/js_utils/issues"
+  },
+  "homepage": "https://github.com/whastings/js_utils#readme",
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "tap-spec": "^4.0.0",
+    "tape": "^4.0.0"
+  }
+}
