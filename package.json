@@ -21,6 +21,7 @@
   "homepage": "https://github.com/whastings/js_utils#readme",
   "devDependencies": {
     "babel": "^5.4.7",
+    "bulk-require": "^0.2.1",
     "tap-spec": "^4.0.0",
     "tape": "^4.0.0"
   }

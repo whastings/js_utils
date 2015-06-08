@@ -1,1 +1,3 @@
-require('./functional/curryN_tests');
+var bulk = require('bulk-require');
+
+bulk(__dirname, ['**/*.js']);
