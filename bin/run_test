@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+./node_modules/babel/bin/babel-node tests $1 | ./node_modules/tap-spec/bin/cmd.js
