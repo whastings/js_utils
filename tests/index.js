@@ -1,3 +1,9 @@
 var bulk = require('bulk-require');
 
-bulk(__dirname, ['**/*.js']);
+var test = process.argv[2];
+
+if (test) {
+  require(test);
+} else {
+  bulk(__dirname, ['**/*.js']);
+}
