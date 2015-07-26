@@ -1,9 +1,15 @@
-var bulk = require('bulk-require');
+var bulk = require('bulk-require'),
+    tapSpec = require('tap-spec'),
+    test = require('tape');
 
-var test = process.argv[2];
+var testName = process.argv[2];
 
-if (test) {
-  require(test);
+test.createStream()
+  .pipe(tapSpec())
+  .pipe(process.stdout);
+
+if (testName) {
+  require(testName);
 } else {
   bulk(__dirname, ['**/*.js']);
 }

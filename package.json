@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "babel-node tests | tap-spec"
+    "test": "babel-node tests/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "babel": "^5.4.7",
     "bulk-require": "^0.2.1",
+    "native-promise-only": "^0.8.0-a",
     "sinon": "^1.14.1",
     "tap-spec": "^4.0.0",
     "tape": "^4.0.0"
