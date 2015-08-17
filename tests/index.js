@@ -11,5 +11,5 @@ test.createStream()
 if (testName) {
   require(testName);
 } else {
-  bulk(__dirname, ['**/*.js']);
+  bulk(__dirname, ['**/*_tests.js']);
 }
