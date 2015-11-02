@@ -1,5 +1,5 @@
 {
-  "name": "js_utils",
+  "name": "@whastings/js_utils",
   "version": "0.1.0",
   "description": "Various utilities for working in JavaScript.",
   "main": "index.js",
