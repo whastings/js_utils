@@ -1,6 +1,6 @@
 {
   "name": "js_utils",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Various utilities for working in JavaScript.",
   "main": "index.js",
   "directories": {
