@@ -1,12 +1,13 @@
 {
   "name": "@whastings/js_utils",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Various utilities for working in JavaScript.",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "prepublish": "npm test",
     "test": "babel-node tests/index.js"
   },
   "repository": {
