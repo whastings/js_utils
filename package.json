@@ -2,12 +2,14 @@
   "name": "@whastings/js_utils",
   "version": "0.3.0",
   "description": "Various utilities for working in JavaScript.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "jsnext:main": "lib/index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "prepublish": "npm test",
+    "build": "webpack",
+    "prepublish": "npm test && npm run build",
     "test": "babel-node tests/index.js"
   },
   "repository": {
@@ -22,10 +24,14 @@
   "homepage": "https://github.com/whastings/js_utils#readme",
   "devDependencies": {
     "babel": "^5.4.7",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.3",
+    "babel-preset-es2015": "^6.5.0",
     "bulk-require": "^0.2.1",
     "native-promise-only": "^0.8.0-a",
     "sinon": "^1.14.1",
     "tap-spec": "^4.0.0",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "webpack": "^1.12.13"
   }
 }
