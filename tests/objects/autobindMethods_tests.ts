@@ -1,5 +1,5 @@
 import { autobindMethods } from '../../lib/objects';
-import test from 'tape';
+import { test } from 'tape';
 
 test('autobindMethods()', function(t) {
   t.test('it binds methods by name to an instance', function(st) {

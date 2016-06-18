@@ -1,9 +1,9 @@
 // Based on: https://github.com/andreypopp/autobind-decorator
-export function autobindMethods(constructor, ...methodNames) {
+export function autobindMethods(constructor: Function, ...methodNames: string[]): void {
   let { prototype } = constructor;
 
   methodNames.forEach((methodName) => {
-    let method = prototype[methodName];
+    let method: Function = prototype[methodName];
     Object.defineProperty(prototype, methodName, {
       configurable: true,
       get() {

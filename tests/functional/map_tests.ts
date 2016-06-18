@@ -1,9 +1,9 @@
 import { map } from '../../lib/functional';
-import test from 'tape';
-import testCurriedMethod from './testCurriedMethod.js';
+import { test } from 'tape';
+import testCurriedMethod from './testCurriedMethod';
 
 test('map()', function(t) {
-  var args = [function() {}];
+  let args = [function() {}];
 
   testCurriedMethod(t, map, 'map', args);
 });

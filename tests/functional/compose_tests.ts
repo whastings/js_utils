@@ -1,7 +1,5 @@
-'use strict';
-
 import { compose } from '../../lib/functional';
-import test from 'tape';
+import { test } from 'tape';
 
 test('compose()', function(t) {
   t.test('it runs each function from right to left, passing result along', function(st) {

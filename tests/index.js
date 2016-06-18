@@ -8,8 +8,10 @@ test.createStream()
   .pipe(tapSpec())
   .pipe(process.stdout);
 
+require('ts-node/register');
+
 if (testName) {
-  require(testName);
+  require('./' + testName + '_tests');
 } else {
-  bulk(__dirname, ['**/*_tests.js']);
+  bulk(__dirname, ['**/*_tests.ts']);
 }

@@ -1,17 +1,13 @@
-'use strict';
-
-import { beforeAndAfterTest } from '../../test_helpers/tape_helpers.js';
-import sinon from 'sinon';
+import { beforeAndAfterTest } from '../../test_helpers/tape_helpers.ts';
+import * as sinon from 'sinon';
 import { timeout } from '../../lib/promise_utils';
-import test from 'tape';
-
-require('native-promise-only');
+import { test } from 'tape';
 
 test('timeout()', function(t) {
-  var clock,
+  let clock,
       sandbox;
 
-  var wrapper = beforeAndAfterTest(
+  let wrapper = beforeAndAfterTest(
      function() {
        sandbox = sinon.sandbox.create();
        clock = sandbox.useFakeTimers();
@@ -22,7 +18,7 @@ test('timeout()', function(t) {
   );
 
   t.test('it resolves a promise after a given amount of time', wrapper(function(st) {
-    var resolveSpy = sandbox.spy(),
+    let resolveSpy = sandbox.spy(),
         promise = timeout(1000);
     st.plan(2);
 

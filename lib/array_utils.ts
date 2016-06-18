@@ -1,5 +1,5 @@
-export function flatten(array, levels = Infinity, initArray = []) {
-  return array.reduce((flatArray, value) => {
+export function flatten(array: any[], levels: number = Infinity, initArray: any[] = []): any[] {
+  return array.reduce((flatArray: any[], value: any) => {
     if (Array.isArray(value) && levels > 0) {
       return flatten(value, levels - 1, flatArray);
     }

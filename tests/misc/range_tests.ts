@@ -1,5 +1,5 @@
 import { range } from '../../lib/misc';
-import test from 'tape';
+import { test } from 'tape';
 
 test('range()', function(t) {
   t.test('it creates a range from 0 to n with one argument', function(st) {
