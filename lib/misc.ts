@@ -1,17 +1,11 @@
-export function rand(min, max) {
+export function rand(min: number, max: number): number {
   return Math.floor((Math.random() * (max - min + 1)) + min);
 }
 
-export function range(...args) {
-  let start,
-      end;
-
-  if (args.length === 1) {
+export function range(start: number, end?: number): number[] {
+  if (end === undefined) {
+    end = start;
     start = 0;
-    end = args[0];
-  } else {
-    start = args[0];
-    end = args[1];
   }
 
   let step = (end < start) ? -1 : 1,
@@ -23,7 +17,7 @@ export function range(...args) {
   return values;
 }
 
-export function repeat(numTimes, fn) {
+export function repeat(numTimes: number, fn: Function): void {
   for (let i = 1; i <= numTimes; i++) {
     fn(i);
   }

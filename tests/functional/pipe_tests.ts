@@ -1,7 +1,5 @@
-'use strict';
-
 import { pipe } from '../../lib/functional';
-import test from 'tape';
+import { test } from 'tape';
 
 test('pipe()', function(t) {
   t.test('it runs each function from left to right, passing result along', function(st) {

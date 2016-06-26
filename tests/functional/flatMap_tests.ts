@@ -1,5 +1,5 @@
 import { flatMap } from '../../lib/functional';
-import test from 'tape';
+import { test } from 'tape';
 
 test('flatMap()', function(t) {
   t.test('it flattens the result of a map by one level', function(st) {

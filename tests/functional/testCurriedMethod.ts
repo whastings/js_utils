@@ -1,4 +1,4 @@
-import sinon from 'sinon';
+import * as sinon from 'sinon';
 
 export default function testCurriedMethod(t, func, method, args) {
   t.test(`it calls ${method} on the passed object with the given arguments`, function(st) {

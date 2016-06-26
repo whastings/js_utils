@@ -1,40 +1,48 @@
 /* eslint no-use-before-define:0 */
 import { flatten } from './array_utils';
 
+interface Filterable {
+  filter(fn: Function);
+}
+
 interface Mappable {
   map(fn: Function);
 }
 
-export function always(val: any) {
+interface Reduceable {
+  reduce(fn: Function, initVal: any);
+}
+
+export function always(val: any): Function {
   return function() {
     return val;
   };
 }
 
-export function compose(...funcs: Function[]) {
+export function compose(...funcs: Function[]): Function {
   return pipe(...funcs.reverse());
 }
 
-export function curry2(func: Function) {
-  return function(a) {
-    return function(b) {
+export function curry2(func: Function): Function {
+  return function(a: any) {
+    return function(b: any) {
       return func(a, b);
     };
   };
 }
 
-export function curry3(func: Function) {
-  return function(a) {
-    return function(b) {
-      return function(c) {
+export function curry3(func: Function): Function {
+  return function(a: any) {
+    return function(b: any) {
+      return function(c: any) {
         return func(a, b, c);
       };
     };
   };
 }
 
-export function curryN(func: Function, arity: number = func.length) {
-  function curried(prevArgs: any[], ...args) {
+export function curryN(func: Function, arity: number = func.length): Function {
+  function curried(prevArgs: any[], ...args: any[]) {
     let newArgs = prevArgs.concat(args);
 
     if (newArgs.length >= arity) {
@@ -47,11 +55,11 @@ export function curryN(func: Function, arity: number = func.length) {
   return curried.bind(null, []);
 }
 
-export var filter = curryN(function filter(func, container) {
+export var filter = curryN(function filter(func: Function, container: Filterable) {
   return container.filter(func);
 });
 
-export var flatMap = curryN(function flatMap(func, container) {
+export var flatMap = curryN(function flatMap(func: Function, container: Mappable) {
   return flatten(map(func, container), 1);
 });
 
@@ -59,7 +67,7 @@ export function identity(val: any) {
   return val;
 }
 
-export var map = curryN(function map(func: Function, container: Mappable) {
+export var map = curryN(function map<T>(func: Function, container: Mappable) {
   return container.map(func);
 });
 
@@ -69,10 +77,10 @@ export function pipe(...funcs: Function[]) {
   };
 }
 
-export var prop = curryN(function(propName: string, object: Object) {
+export var prop = curryN(function prop(propName: string, object: Object): any {
   return object[propName];
 });
 
-export var reduce = curryN(function reduce(func, initVal, container) {
+export var reduce = curryN(function reduce(func: Function, initVal: any, container: Reduceable) {
   return container.reduce(func, initVal);
 });

@@ -1,9 +1,8 @@
-'use strict';
-
 import { done } from '../../lib/promise_utils';
-import test from 'tape';
+import { test } from 'tape';
 
-require('native-promise-only');
+// TODO: Figure out how to get TS to recognize this as Node environment.
+declare var process: any;
 
 test('done()', function(t) {
   var promise;

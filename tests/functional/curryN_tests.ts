@@ -1,11 +1,9 @@
-'use strict';
-
 import { curryN } from '../../lib/functional';
-import test from 'tape';
+import { test}  from 'tape';
 
 test('curryN()', function(t) {
   t.test('it curries a function\'s arguments', function(st) {
-    var curriedFunc;
+    let curriedFunc;
     st.plan(1);
 
     function func(a, b, c, d) {
@@ -17,7 +15,7 @@ test('curryN()', function(t) {
   });
 
   t.test('it accepts an optional arity argument', function(st) {
-    var curriedFunc;
+    let curriedFunc;
     st.plan(1);
 
     function func(a, b, c, d, e) { // eslint-disable-line
@@ -29,8 +27,8 @@ test('curryN()', function(t) {
   });
 
   t.test('two calls to same curried func will not affect each other', function(st) {
-    var result,
-        firstCurried;
+    let result;
+    let firstCurried;
     st.plan(2);
 
     function func(a, b, c, d) {

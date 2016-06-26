@@ -1,9 +1,9 @@
 import { filter } from '../../lib/functional';
-import test from 'tape';
-import testCurriedMethod from './testCurriedMethod.js';
+import { test } from 'tape';
+import testCurriedMethod from './testCurriedMethod';
 
 test('filter()', function(t) {
-  var args = [function() {}];
+  let args = [function() {}];
 
   testCurriedMethod(t, filter, 'filter', args);
 });
